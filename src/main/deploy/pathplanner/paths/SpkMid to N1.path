@@ -1,0 +1,52 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 1.3110120765696076,
+        "y": 5.531946336619947
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.338998314360265,
+        "y": 4.244579398249706
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.374489112614589,
+        "y": 4.085990717435981
+      },
+      "prevControl": {
+        "x": 1.4136282818020183,
+        "y": 4.132634447087076
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 5.0,
+    "maxAcceleration": 3.5,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 180.0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "From SpkMid",
+  "previewStartingState": {
+    "rotation": -179.5372539807262,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

@@ -1,0 +1,148 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 1.31,
+      "y": 5.53
+    },
+    "rotation": 179.25504506226073
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "AllianceColors"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "GuitarToHome"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "ShootNoteAtDefault"
+          }
+        },
+        {
+          "type": "race",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "IntakeNote"
+                }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "SpkMid to N2"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 3.0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "N2 to SpkMid"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "ShootNoteAtDefault"
+          }
+        },
+        {
+          "type": "race",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "IntakeNote"
+                }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "SpkMid to N3"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 3.0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "N3 to SpkMid"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "ShootNoteAtDefault"
+          }
+        },
+        {
+          "type": "race",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "IntakeNote"
+                }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "SpkMid to N1"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 3.0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "N1 to SpkMid"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "ShootNoteAtDefault"
+          }
+        }
+      ]
+    }
+  },
+  "folder": null,
+  "choreoAuto": false
+}

@@ -1,0 +1,63 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 0.7419585748262406,
+        "y": 6.623409610455584
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.684161913778373,
+        "y": 6.698039577897338
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 7.85046297365322,
+        "y": 7.3790380308033345
+      },
+      "prevControl": {
+        "x": 5.863440090516545,
+        "y": 7.1924631121989515
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 0.55,
+      "rotationDegrees": -173.79655209830813,
+      "rotateFast": true
+    },
+    {
+      "waypointRelativePos": 0.15,
+      "rotationDegrees": -119.08506616289033,
+      "rotateFast": true
+    }
+  ],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 5.0,
+    "maxAcceleration": 3.5,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -174.40066066347936,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "From SpkTop",
+  "previewStartingState": {
+    "rotation": -120.42578380196124,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}
