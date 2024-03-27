@@ -34,15 +34,15 @@
           "data": {
             "commands": [
               {
-                "type": "named",
-                "data": {
-                  "name": "IntakeNote"
-                }
-              },
-              {
                 "type": "path",
                 "data": {
                   "pathName": "SpkMid to N2"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "IntakeNote"
                 }
               },
               {
@@ -71,42 +71,11 @@
           "data": {
             "commands": [
               {
-                "type": "named",
-                "data": {
-                  "name": "IntakeNote"
-                }
-              },
-              {
                 "type": "path",
                 "data": {
-                  "pathName": "SpkMid to N3"
+                  "pathName": "SpkMid to F3"
                 }
               },
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 3.0
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "N3 to SpkMid"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "ShootNoteAtDefault"
-          }
-        },
-        {
-          "type": "race",
-          "data": {
-            "commands": [
               {
                 "type": "named",
                 "data": {
@@ -114,24 +83,24 @@
                 }
               },
               {
-                "type": "path",
-                "data": {
-                  "pathName": "SpkMid to N1"
-                }
-              },
-              {
                 "type": "wait",
                 "data": {
-                  "waitTime": 3.0
+                  "waitTime": 4.0
                 }
               }
             ]
           }
         },
         {
+          "type": "wait",
+          "data": {
+            "waitTime": 3.0
+          }
+        },
+        {
           "type": "path",
           "data": {
-            "pathName": "N1 to SpkMid"
+            "pathName": "F3 to SpkMid"
           }
         },
         {

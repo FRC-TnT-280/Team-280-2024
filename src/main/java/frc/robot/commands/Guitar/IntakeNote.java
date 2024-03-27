@@ -37,9 +37,11 @@ public class IntakeNote extends Command {
     s_Guitar.runIntakeAtSpeed(Constants.guitar.intake.motor.dutyCycleIntake);
 
     if (iCount < 10) {
+      // s_Candle.setLED_All(255, 70, 0);
       s_Candle.setLED_ToAlliance(s_SwitchPanel);
     } else {
-      s_Candle.setLED_NotCandle(0, 0, 0);
+      // s_Candle.setLED_NotCandle(0, 0, 0);
+      s_Candle.setLED_NotCandle(255, 70, 0);
     }
     iCount++;
     iCount %= 20;
@@ -51,6 +53,8 @@ public class IntakeNote extends Command {
   public void end(boolean interrupted) {
     if (s_Guitar.getIntakeHasNote()) {
       s_Candle.setLED_All(255, 70, 0);  //sets the LEDs to a nice orange color
+    } else if (!s_Guitar.getIntakeHasNote()) {
+      s_Candle.setLED_AllianceColorNoSwitch();
     }
     s_Guitar.stopIntake();
   }

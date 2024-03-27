@@ -34,11 +34,7 @@ public class ReverseNote extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-
     s_Guitar.runIntakeAtSpeed(-0.5);
-    if (!s_Guitar.getIntakeHasNote()) {
-      iCount++;
-    }
   }
 
   // Called once the command ends or is interrupted.
@@ -53,10 +49,11 @@ public class ReverseNote extends Command {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    if (iCount >= 10) {
-      return true;
-    } else {
-      return false;
-    }
+    // if (!s_Guitar.getIntakeHasNote()) {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
+    return false;
   }
 }

@@ -4,24 +4,40 @@
     {
       "anchor": {
         "x": 0.7419585748262406,
-        "y": 6.623409610455584
+        "y": 4.449811808714527
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.684161913778373,
-        "y": 6.698039577897338
+        "x": 2.7196527120326968,
+        "y": 2.15494030988062
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 8.05569538411804,
-        "y": 7.341723047082458
+        "x": 4.771976816680906,
+        "y": 0.9142171011614753
       },
       "prevControl": {
-        "x": 9.408363543999814,
-        "y": 7.565612949407718
+        "x": 2.955203546770729,
+        "y": 1.2430553952017003
+      },
+      "nextControl": {
+        "x": 6.34525656778607,
+        "y": 0.6294514465968688
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 8.06502413004826,
+        "y": 0.7742859122081884
+      },
+      "prevControl": {
+        "x": 9.688225921906389,
+        "y": 0.839587133719723
       },
       "nextControl": null,
       "isLocked": false,
@@ -30,14 +46,9 @@
   ],
   "rotationTargets": [
     {
-      "waypointRelativePos": 0.55,
-      "rotationDegrees": -173.79655209830813,
-      "rotateFast": true
-    },
-    {
-      "waypointRelativePos": 0.15,
-      "rotationDegrees": -119.08506616289033,
-      "rotateFast": true
+      "waypointRelativePos": 1,
+      "rotationDegrees": -179.54886145321277,
+      "rotateFast": false
     }
   ],
   "constraintZones": [],
@@ -50,13 +61,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -174.40066066347936,
+    "rotation": 180.0,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "From SpkTop",
+  "folder": "From SpkBot",
   "previewStartingState": {
-    "rotation": -120.42578380196124,
+    "rotation": 121.7151335150978,
     "velocity": 0
   },
   "useDefaultConstraints": true

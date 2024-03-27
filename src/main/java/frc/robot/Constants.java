@@ -66,8 +66,8 @@ public final class Constants {
                 public static final double kI = 0.0;
                 public static final double kD = 0.0;
                 public static final boolean bInverted = false; // invert
-                public static final double dutyCycleToClimb = 0.65; // hook up speed
-                public static final double dutyCycleToHome = -0.55; // hook down speed
+                public static final double dutyCycleToClimb = 0.9; // hook up speed
+                public static final double dutyCycleToHome = -0.9; // hook down speed
                 public static final double posDownFull = 0; // hook full retract position
                 public static final double posUpFull = 350; // hook full extend position //TODO set hook full up position
                 public static final double posTolerance = 5; // tolerance for hook in position
@@ -106,8 +106,8 @@ public final class Constants {
                 public static final double kI = 0.0;
                 public static final double kD = 0.0;
                 public static final boolean bInverted = false; // invert
-                public static final double dutyCycleToClimb = .65; // hook up speed
-                public static final double dutyCycleToHome = -.55; // hook down speed
+                public static final double dutyCycleToClimb = .9; // hook up speed
+                public static final double dutyCycleToHome = -.9; // hook down speed
                 public static final double posDownFull = 0; // hook full retract position
                 public static final double posUpFull = 350; // hook full extend position //TODO set hook full up position
                 public static final double posTolerance = 5; // tolerance for hook in position
@@ -120,7 +120,7 @@ public final class Constants {
         public static final class intake {
             public static final class motor {
                 public static final int canID = 14;
-                public static final boolean bInverted = true; //invert
+                public static final boolean bInverted = false; //invert
                 public static final double dutyCycleIntake = .6; // intake pickup speed
                 public static final double dutyCycleShoot = 1; // intake shoot speed
             }
@@ -138,7 +138,7 @@ public final class Constants {
                 public static final double kV = .01; 
                 public static final boolean bInverted = true; // invert
                 public static final double velTolerance = .5; // window for determining when shooter is at speed
-                public static final double velDefaultRange = 52; // RPS for shooting at the default range
+                public static final double velDefaultRange = 54; //52; // RPS for shooting at the default range
                 public static final double velClearNote = 35; // just enough to get over the bot for denials
             }
         }
@@ -153,7 +153,7 @@ public final class Constants {
                 public static final double kV = .01;
                 public static final boolean bInverted = true; // invert
                 public static final double velTolerance = .5; // window for determining when shooter is at speed
-                public static final double velDefaultRange = 27; // RPS for shooting at the default range
+                public static final double velDefaultRange = 30; //27; // RPS for shooting at the default range
                 public static final double velClearNote = 35; // just enough to get over the bot for denials
             }
 

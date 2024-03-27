@@ -154,6 +154,16 @@ public class SubClimber extends SubsystemBase {
     ClimberRight.Pivot.Motor.setControl(positionRequested);
   }
 
+  public void runClimberLeftAtSpeed(double targetSpeed) {
+    var targetDutyCycle = new DutyCycleOut(targetSpeed);
+    ClimberLeft.Pivot.Motor.setControl(targetDutyCycle);
+  }
+
+  public void runClimberRightAtSpeed(double targetSpeed) {
+    var targetDutyCycle = new DutyCycleOut(targetSpeed);
+    ClimberRight.Pivot.Motor.setControl(targetDutyCycle);
+  }
+
   /** Allows the operator to run the left climber hook motor at the speed passed in from the command -- THIS HAS NO SOFT POSITION LIMITS
    * @param targetSpeed (-1.0 to 1.0) % speed to run the motor -- negative values lower, positive values raise
   */

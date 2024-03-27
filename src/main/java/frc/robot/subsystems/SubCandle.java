@@ -15,7 +15,7 @@ import com.ctre.phoenix.led.CANdle.VBatOutputMode;
 import frc.robot.subsystems.SubSwitchPanel;
 
 public class SubCandle extends SubsystemBase {
-    private final CANdle m_candle = new CANdle(Constants.candle.canID, "canivore");
+    public static final CANdle m_candle = new CANdle(Constants.candle.canID, "canivore");
 
     private SubSwitchPanel s_SwitchPanel;
 
@@ -26,7 +26,7 @@ public class SubCandle extends SubsystemBase {
         configAll.statusLedOffWhenActive = false;
         configAll.disableWhenLOS = false;
         configAll.stripType = LEDStripType.RGB;
-        configAll.brightnessScalar = .5;
+        configAll.brightnessScalar = 1;
         configAll.vBatOutputMode = VBatOutputMode.Modulated;
         m_candle.configAllSettings(configAll, 100);
     }
@@ -50,6 +50,16 @@ public class SubCandle extends SubsystemBase {
         setLED_NotCandle(0,0,255);
       } else if ((!alliance.isPresent() && s_SwitchPanel.getAllianceRedSwitch()) 
       || (alliance.isPresent() && alliance.get() == DriverStation.Alliance.Red)) {
+        setLED_NotCandle(255, 0, 0);
+      }
+    } 
+
+    public void setLED_AllianceColorNoSwitch() {
+      var alliance = DriverStation.getAlliance();
+
+      if (alliance.get() == DriverStation.Alliance.Blue) {
+        setLED_NotCandle(0,0,255);
+      } else if (alliance.get() == DriverStation.Alliance.Red) {
         setLED_NotCandle(255, 0, 0);
       }
     } 

@@ -6,6 +6,7 @@ package frc.robot;
 
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -24,14 +25,21 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_robotContainer = new RobotContainer();
 
-    // UsbCamera camera0 = CameraServer.startAutomaticCapture(0);
-    // camera0.setResolution(320, 240);
+    UsbCamera camera0 = CameraServer.startAutomaticCapture(0);
+    camera0.setResolution(320, 240);
 
     SubClimber.ClimberLeft.Hook.Motor.setPosition(climberLeft.hook.motor.posDownFull);
     SubClimber.ClimberRight.Hook.Motor.setPosition(climberRight.hook.motor.posDownFull);
 
     SubClimber.ClimberLeft.Pivot.Encoder.setPosition(0);
     SubClimber.ClimberRight.Pivot.Encoder.setPosition(0);
+
+    var alliance = DriverStation.getAlliance();
+    if (alliance.get() == DriverStation.Alliance.Blue) {
+      SubCandle.m_candle.setLEDs(0,0,255);
+    } else if (alliance.get() == DriverStation.Alliance.Red) {
+      SubCandle.m_candle.setLEDs(255, 0, 0);
+    }
 
   }
 

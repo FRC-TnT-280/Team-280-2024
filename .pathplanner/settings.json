@@ -4,6 +4,7 @@
   "holonomicMode": true,
   "pathFolders": [
     "Denial A",
+    "Denial B",
     "From F1",
     "From F2",
     "From F3",
@@ -14,7 +15,7 @@
     "From SpkBot",
     "From SpkMid",
     "From SpkTop",
-    "Denial B",
+    "From F4",
     "Woodhaven Finals"
   ],
   "autoFolders": [],

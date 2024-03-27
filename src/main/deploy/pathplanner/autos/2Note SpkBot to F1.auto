@@ -14,29 +14,41 @@
         {
           "type": "named",
           "data": {
+            "name": "AllianceColors"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
             "name": "GuitarToHome"
           }
         },
         {
-          "type": "wait",
+          "type": "named",
           "data": {
-            "waitTime": 1.6
+            "name": "ShootNoteAtDefault"
           }
         },
         {
-          "type": "race",
+          "type": "parallel",
           "data": {
             "commands": [
               {
                 "type": "named",
                 "data": {
-                  "name": "ShootNoteAtDefault"
+                  "name": "IntakeNote"
+                }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "SpkBot to F1"
                 }
               },
               {
                 "type": "wait",
                 "data": {
-                  "waitTime": 2.0
+                  "waitTime": 3.5
                 }
               }
             ]
@@ -45,7 +57,13 @@
         {
           "type": "path",
           "data": {
-            "pathName": "SpkBot to MidLow"
+            "pathName": "F1 to SpkBot"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "ShootNoteAtDefault"
           }
         }
       ]

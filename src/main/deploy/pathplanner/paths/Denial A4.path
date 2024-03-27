@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 0.7326298288960215,
-        "y": 6.623409610455584
+        "x": 5.415660285866026,
+        "y": 1.5112568406954996
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.2252291777310838,
-        "y": 6.390190962200105
+        "x": 6.3205486410972815,
+        "y": 1.9683653912762373
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 7.831805481792781,
-        "y": 7.42568176045443
+        "x": 8.037037892257603,
+        "y": 3.9274020366222553
       },
       "prevControl": {
-        "x": 8.82065255039601,
-        "y": 7.518969219756621
+        "x": 8.484817696908122,
+        "y": 4.384510587202993
       },
       "nextControl": null,
       "isLocked": false,
@@ -39,13 +39,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 180.0,
+    "rotation": -135.65854317756364,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "Woodhaven Finals",
+  "folder": "Denial A",
   "previewStartingState": {
-    "rotation": -119.85901616492308,
+    "rotation": 179.13194855025438,
     "velocity": 0
   },
   "useDefaultConstraints": true

@@ -93,8 +93,8 @@ public class RobotContainer {
     NamedCommands.registerCommand("GuitarToHome", new GPivotGoTo(s_Guitar, guitar.pivot.posHome));
     NamedCommands.registerCommand("AllianceColors", new InstantCommand(() -> s_Candle.setLED_ToAlliance(s_SwitchPanel)));
     
-    SmartDashboard.putData(s_Climber);
-    SmartDashboard.putData(s_Guitar);
+    // SmartDashboard.putData(s_Climber);
+    // SmartDashboard.putData(s_Guitar);
 
     configureBindings();
     
@@ -137,13 +137,13 @@ public class RobotContainer {
           .withRotationalRate(-driverXboxController.getRightX() * TunerConstants.MaxAngularRate),
       "Default drive"));
 
-    driverXboxController.leftTrigger().whileTrue(drivetrain.applyRequestWithName(
-      () -> targetLock
-          .withVelocityX(-driverXboxController.getLeftY() * TunerConstants.MaxSpeed)
-          .withVelocityY(-driverXboxController.getLeftX() * TunerConstants.MaxSpeed),
-      "Target lock"));
+    // driverXboxController.leftTrigger().whileTrue(drivetrain.applyRequestWithName(
+    //   () -> targetLock
+    //       .withVelocityX(-driverXboxController.getLeftY() * TunerConstants.MaxSpeed)
+    //       .withVelocityY(-driverXboxController.getLeftX() * TunerConstants.MaxSpeed),
+    //   "Target lock"));
     
-    driverXboxController.leftBumper().whileTrue(drivetrain.applyRequestWithName(
+    driverXboxController.leftTrigger().whileTrue(drivetrain.applyRequestWithName(
       () -> robotCentricDrive
           .withVelocityX(driverXboxController.getLeftY() * TunerConstants.MaxSpeed * 0.5)
           .withVelocityY(driverXboxController.getLeftX() * TunerConstants.MaxSpeed * 0.5)
@@ -151,32 +151,31 @@ public class RobotContainer {
       "Robot centric drive"));      
 
     // LED TEST COMMANDS
-    driverXboxController.povUp()
-      .onTrue(new InstantCommand(() -> s_Candle.setLED_L3(000, 000, 255)))
-      .onTrue(new InstantCommand(() -> s_Candle.setLED_L2(255, 000, 000)))
-      .onTrue(new InstantCommand(() -> s_Candle.setLED_L1(255, 255, 255)))
-      .onTrue(new InstantCommand(() -> s_Candle.setLED_C0(000, 000, 255)))
-      .onTrue(new InstantCommand(() -> s_Candle.setLED_R1(255, 255, 255)))
-      .onTrue(new InstantCommand(() -> s_Candle.setLED_R2(255, 000, 000)))
-      .onTrue(new InstantCommand(() -> s_Candle.setLED_R3(000, 000, 255)))
-      .onTrue(new InstantCommand(() -> s_Candle.setLED_Candle(255, 255, 255)));
+    // driverXboxController.povUp()
+    //   .onTrue(new InstantCommand(() -> s_Candle.setLED_L3(000, 000, 255)))
+    //   .onTrue(new InstantCommand(() -> s_Candle.setLED_L2(255, 000, 000)))
+    //   .onTrue(new InstantCommand(() -> s_Candle.setLED_L1(255, 255, 255)))
+    //   .onTrue(new InstantCommand(() -> s_Candle.setLED_C0(000, 000, 255)))
+    //   .onTrue(new InstantCommand(() -> s_Candle.setLED_R1(255, 255, 255)))
+    //   .onTrue(new InstantCommand(() -> s_Candle.setLED_R2(255, 000, 000)))
+    //   .onTrue(new InstantCommand(() -> s_Candle.setLED_R3(000, 000, 255)))
+    //   .onTrue(new InstantCommand(() -> s_Candle.setLED_Candle(255, 255, 255)));
 
-    driverXboxController.povDown().onTrue(new InstantCommand(() -> s_Candle.setLED_All(255, 0, 0)));
-    driverXboxController.povRight().onTrue(new InstantCommand(() -> s_Candle.setLED_All(225, 10, 0)));
-    driverXboxController.povLeft().onTrue(new InstantCommand(() -> s_Candle.setLED_All(30, 0, 255)));
+    // driverXboxController.povDown().onTrue(new InstantCommand(() -> s_Candle.setLED_All(255, 0, 0)));
+    // driverXboxController.povRight().onTrue(new InstantCommand(() -> s_Candle.setLED_All(225, 10, 0)));
+    // driverXboxController.povLeft().onTrue(new InstantCommand(() -> s_Candle.setLED_All(30, 0, 255)));
 
     // reset the field-centric heading on A button
     driverXboxController.a().onTrue(drivetrain.runOnce(() -> drivetrain.seedFieldRelative()));
 
     // intake note
     driverXboxController.rightTrigger()
-      .whileTrue(new IntakeNote(s_Guitar, s_Candle, s_SwitchPanel));
-      // .onFalse(new InstantCommand(() -> s_Guitar.runIntakeAtSpeed(0)));
+      .onTrue(new IntakeNote(s_Guitar, s_Candle, s_SwitchPanel));
+      // .whileTrue(new IntakeNote(s_Guitar, s_Candle, s_SwitchPanel));
 
-    // spit note out backwards
-    // driverXboxController.rightBumper()
-    //   .whileTrue(new ReverseNote(s_Guitar, s_Candle, s_SwitchPanel));
-      // .onFalse(new InstantCommand(() -> s_Guitar.runIntakeAtSpeed(0)));
+    driverXboxController.rightBumper()
+      .onTrue (new InstantCommand(() -> s_Guitar.stopIntake()))
+      .whileTrue(new ReverseNote(s_Guitar, s_Candle, s_SwitchPanel));
 
     /** OPERATOR CONTROLS
      * LEFT STICK -- 
@@ -213,11 +212,12 @@ public class RobotContainer {
 
     // climber pivots to climb 
     operatorXboxController.start()
-      .onTrue(new CPivotsGoTo(s_Climber, climberLeft.pivot.posClimb, climberRight.pivot.posClimb));
+      .onTrue(new CPivotsGoTo(s_Climber, climberLeft.pivot.posClimb, climberRight.pivot.posClimb))
+      .onTrue(new CHooksGoUp(s_Climber));
       
     // climber pivots to home
-    operatorXboxController.back()
-      .onTrue(new CPivotsGoTo(s_Climber, climberLeft.pivot.posHome, climberRight.pivot.posHome));
+    // operatorXboxController.back()
+    //   .onTrue(new CPivotsGoTo(s_Climber, climberLeft.pivot.posHome, climberRight.pivot.posHome));
 
     //guitar pivot to trap
     operatorXboxController.y()
@@ -227,9 +227,9 @@ public class RobotContainer {
     operatorXboxController.a()
       .onTrue(new GPivotGoTo(s_Guitar, guitar.pivot.posHome));
 
-    // guitar pivot to mid range shot
-    operatorXboxController.x()
-      .onTrue(new GPivotGoTo(s_Guitar, guitar.pivot.posMid));
+    // // guitar pivot to mid range shot
+    // operatorXboxController.x()
+    //   .onTrue(new GPivotGoTo(s_Guitar, guitar.pivot.posMid));
 
     // guitar pivot to amp
     operatorXboxController.b()

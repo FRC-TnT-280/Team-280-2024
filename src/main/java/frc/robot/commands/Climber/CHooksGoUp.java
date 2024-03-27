@@ -15,7 +15,7 @@ public class CHooksGoUp extends Command {
   /** Creates a new GoHome. */
   public CHooksGoUp(SubClimber s_Climber) {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(s_Climber);
+    // addRequirements(s_Climber);
     this.s_Climber = s_Climber;
   }
 

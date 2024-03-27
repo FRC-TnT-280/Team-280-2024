@@ -118,21 +118,21 @@ public class SubSwitchPanel extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    SmartDashboard.putBoolean("Auton 01", getRotary01());
-    SmartDashboard.putBoolean("Auton 02", getRotary02());
-    SmartDashboard.putBoolean("Auton 03", getRotary03());
-    SmartDashboard.putBoolean("Auton 04", getRotary04());
-    SmartDashboard.putBoolean("Auton 05", getRotary05());
-    SmartDashboard.putBoolean("Auton 06", getRotary06());
-    SmartDashboard.putBoolean("Auton 07", getRotary07());
-    SmartDashboard.putBoolean("Auton 08", getRotary08());
-    SmartDashboard.putBoolean("Auton 09", getRotary09());
-    SmartDashboard.putBoolean("Auton 10", getRotary10());
-    SmartDashboard.putBoolean("Auton 11", getRotary11());
-    SmartDashboard.putBoolean("Auton 12", getRotary12());
+    // SmartDashboard.putBoolean("Auton 01", getRotary01());
+    // SmartDashboard.putBoolean("Auton 02", getRotary02());
+    // SmartDashboard.putBoolean("Auton 03", getRotary03());
+    // SmartDashboard.putBoolean("Auton 04", getRotary04());
+    // SmartDashboard.putBoolean("Auton 05", getRotary05());
+    // SmartDashboard.putBoolean("Auton 06", getRotary06());
+    // SmartDashboard.putBoolean("Auton 07", getRotary07());
+    // SmartDashboard.putBoolean("Auton 08", getRotary08());
+    // SmartDashboard.putBoolean("Auton 09", getRotary09());
+    // SmartDashboard.putBoolean("Auton 10", getRotary10());
+    // SmartDashboard.putBoolean("Auton 11", getRotary11());
+    // SmartDashboard.putBoolean("Auton 12", getRotary12());
 
-    SmartDashboard.putBoolean("Alliance Blue", getAllianceBlueSwitch());
-    SmartDashboard.putBoolean("Alliance Red", getAllianceRedSwitch());
-    SmartDashboard.putBoolean("Setup Mode", getSetupModeSwitch());
+    // SmartDashboard.putBoolean("Alliance Blue", getAllianceBlueSwitch());
+    // SmartDashboard.putBoolean("Alliance Red", getAllianceRedSwitch());
+    // SmartDashboard.putBoolean("Setup Mode", getSetupModeSwitch());
   }
 }

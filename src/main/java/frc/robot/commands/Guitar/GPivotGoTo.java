@@ -33,7 +33,7 @@ public class GPivotGoTo extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    if (d_targetPos == pivot.posHome) {
+    if ((d_targetPos == pivot.posHome) || (d_targetPos == pivot.posTrap)) {
       s_Guitar.runPivotAtSpeed(0);
     }
   }
