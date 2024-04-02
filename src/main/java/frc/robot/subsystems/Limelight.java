@@ -140,11 +140,11 @@ public class Limelight extends SubsystemBase {
     botPoseWpiRed = table.getEntry("botpose_wpired").getDoubleArray(new Double[] {});
     fID = table.getEntry("tid").getInteger(-1);
 
-    SmartDashboard.putNumber("tx - x offset", tx);
-    SmartDashboard.putNumber("ty - y offset", ty);
-    SmartDashboard.putNumber("tv - target seen", tv);
-    SmartDashboard.putNumber("ts - skew", ts);
-    SmartDashboard.putNumber("ta - area", ta);
-    SmartDashboard.putNumber("fID - target number", fID);
+    // SmartDashboard.putNumber("tx - x offset", tx);
+    // SmartDashboard.putNumber("ty - y offset", ty);
+    // SmartDashboard.putNumber("tv - target seen", tv);
+    // SmartDashboard.putNumber("ts - skew", ts);
+    // SmartDashboard.putNumber("ta - area", ta);
+    // SmartDashboard.putNumber("fID - target number", fID);
   }
 }

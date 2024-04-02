@@ -25,9 +25,9 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_robotContainer = new RobotContainer();
 
-    UsbCamera camera0 = CameraServer.startAutomaticCapture(0);
-    camera0.setResolution(320, 240);
-    camera0.setFPS(20);
+    // UsbCamera camera0 = CameraServer.startAutomaticCapture(0);
+    // camera0.setResolution(320, 240);
+    // camera0.setFPS(10);
 
     SubClimber.ClimberLeft.Hook.Motor.setPosition(climberLeft.hook.motor.posDownFull);
     SubClimber.ClimberRight.Hook.Motor.setPosition(climberRight.hook.motor.posDownFull);

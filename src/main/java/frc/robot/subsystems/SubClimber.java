@@ -232,17 +232,17 @@ public class SubClimber extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    SmartDashboard.putBoolean("Left Climber Hook At Max", getClimberLeftHookIsAtMaxHeight());
-    SmartDashboard.putBoolean("Right Climber Hook At Max", getClimberRightHookIsAtMaxHeight());
+    // SmartDashboard.putBoolean("Left Climber Hook At Max", getClimberLeftHookIsAtMaxHeight());
+    // SmartDashboard.putBoolean("Right Climber Hook At Max", getClimberRightHookIsAtMaxHeight());
   
-    SmartDashboard.putBoolean("Left Climber Hook At Min", getClimberLeftHookIsAtMinHeight());
-    SmartDashboard.putBoolean("Right Climber Hook At Min", getClimberRightHookIsAtMinHeight());
+    // SmartDashboard.putBoolean("Left Climber Hook At Min", getClimberLeftHookIsAtMinHeight());
+    // SmartDashboard.putBoolean("Right Climber Hook At Min", getClimberRightHookIsAtMinHeight());
 
-    SmartDashboard.putNumber("Left Climber Pivot", getClimberLeftPivotPosition());
-    SmartDashboard.putNumber("Right Climber Pivot", getClimberRightPivotPosition());
+    // SmartDashboard.putNumber("Left Climber Pivot", getClimberLeftPivotPosition());
+    // SmartDashboard.putNumber("Right Climber Pivot", getClimberRightPivotPosition());
     
-    SmartDashboard.putNumber("Left Climber Hook", getClimberLeftHookPosition());
-    SmartDashboard.putNumber("Right Climber Hook", getClimberRightHookPosition());
+    // SmartDashboard.putNumber("Left Climber Hook", getClimberLeftHookPosition());
+    // SmartDashboard.putNumber("Right Climber Hook", getClimberRightHookPosition());
 
   } 
 }

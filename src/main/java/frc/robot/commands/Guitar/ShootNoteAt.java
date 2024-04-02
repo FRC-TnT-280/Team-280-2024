@@ -44,8 +44,7 @@ public class ShootNoteAt extends Command {
     s_Guitar.runShooterLowerAtSpeed(dLowerSpd);
     s_Guitar.runShooterUpperAtSpeed(dUpperSpd);
     if (MathUtil.isNear(dLowerSpd, s_Guitar.getShooterLowerSpeed(), shooterLower.motor.velTolerance) 
-    && MathUtil.isNear(dUpperSpd, s_Guitar.getShooterUpperSpeed(), shooterUpper.motor.velTolerance)
-    /* && MathUtil.isNear(s_Guitar.getGuitarPivotPosition(), Constants.guitar.pivot.posMid, 0.001) */) {
+    && MathUtil.isNear(dUpperSpd, s_Guitar.getShooterUpperSpeed(), shooterUpper.motor.velTolerance)) {
       iCount++;
     }
 
@@ -59,11 +58,6 @@ public class ShootNoteAt extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    // if (s_SwitchPanel.getAllianceBlueSwitch()) {
-    //   s_Candle.setLED_NotCandle(0, 0, 255);
-    // } else if (s_SwitchPanel.getAllianceRedSwitch()) {
-    //   s_Candle.setLED_NotCandle(255,0,0);
-    // }
     s_Candle.setLED_ToAlliance(s_SwitchPanel);
     s_Guitar.stopShooter();
     s_Guitar.stopIntake(); 
