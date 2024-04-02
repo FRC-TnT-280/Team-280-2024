@@ -10,6 +10,7 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.targetlock;
+import frc.robot.commands.FieldCentricAutoAim;
 import frc.robot.commands.Climber.CHooksGoUp;
 import frc.robot.commands.Climber.CHooksGoDown;
 import frc.robot.commands.Climber.CPivotsGoTo;
@@ -75,6 +76,12 @@ public class RobotContainer {
         .withDeadband(TunerConstants.MaxSpeed * 0.1)
         .withRotationalDeadband(TunerConstants.MaxAngularRate * 0.025)
         .withDriveRequestType(DriveRequestType.OpenLoopVoltage);
+
+    private final FieldCentricAutoAim FieldCentricAutoAim = new frc.robot.commands.FieldCentricAutoAim(s_Limelight)
+      .withDeadband(TunerConstants.MaxSpeed * 0.1)
+      .withRotationalDeadband(TunerConstants.MaxAngularRate * 0.1)
+      .withDriveRequestType(DriveRequestType.OpenLoopVoltage);
+
     private final Telemetry logger = new Telemetry(TunerConstants.MaxSpeed);
   /* SWERVE STUFF END */
 
@@ -137,17 +144,23 @@ public class RobotContainer {
           .withRotationalRate(-driverXboxController.getRightX() * TunerConstants.MaxAngularRate),
       "Default drive"));
 
-    // driverXboxController.leftTrigger().whileTrue(drivetrain.applyRequestWithName(
+    // driverXboxController.x().whileTrue(drivetrain.applyRequestWithName(
     //   () -> targetLock
     //       .withVelocityX(-driverXboxController.getLeftY() * TunerConstants.MaxSpeed)
     //       .withVelocityY(-driverXboxController.getLeftX() * TunerConstants.MaxSpeed),
     //   "Target lock"));
     
     driverXboxController.leftTrigger().whileTrue(drivetrain.applyRequestWithName(
+      () -> FieldCentricAutoAim
+          .withVelocityX(-driverXboxController.getLeftY() * TunerConstants.MaxSpeed * 0.75)
+          .withVelocityY(-driverXboxController.getLeftX() * TunerConstants.MaxSpeed * 0.75),
+      "Field centric auto aim"));
+
+    driverXboxController.leftBumper().whileTrue(drivetrain.applyRequestWithName(
       () -> robotCentricDrive
           .withVelocityX(driverXboxController.getLeftY() * TunerConstants.MaxSpeed * 0.5)
           .withVelocityY(driverXboxController.getLeftX() * TunerConstants.MaxSpeed * 0.5)
-          .withRotationalRate(-driverXboxController.getRightX() * TunerConstants.MaxAngularRate * 0.75),
+          .withRotationalRate(-driverXboxController.getRightX() * TunerConstants.MaxAngularRate * 0.5),
       "Robot centric drive"));      
 
     // LED TEST COMMANDS

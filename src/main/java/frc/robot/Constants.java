@@ -116,6 +116,8 @@ public final class Constants {
     }
 
     public static final class guitar {
+        public static final int SHOOTER_AT_SPEED_DEBOUNCE = 3; // how many scans do the shooters have to be at speed before the note is released
+
         /** Guitar intake roller constants */
         public static final class intake {
             public static final class motor {
@@ -132,14 +134,14 @@ public final class Constants {
         public static final class shooterUpper {
             public static final class motor {
                 public static final int canID = 20;
-                public static final double kP = .05; // 0.059
-                public static final double kI = 0.015; // 0.2
-                public static final double kD = 0.0; // 0
-                public static final double kV = .01; 
+                public static final double kP = .05; // 0.05
+                public static final double kI = 0.015; // 0.015
+                public static final double kD = 0.00; // 0
+                public static final double kV = .011; // .011
                 public static final boolean bInverted = true; // invert
-                public static final double velTolerance = .5; // window for determining when shooter is at speed
-                public static final double velDefaultRange = 54; //52; // RPS for shooting at the default range
-                public static final double velClearNote = 35; // just enough to get over the bot for denials
+                public static final double velTolerance = .2; // window for determining when shooter is at speed
+                public static final double velDefaultRange = 50; //46; 54; // RPS for shooting at the default range
+                public static final double velClearNote = 45; //28 35; just enough to get over the bot for denials
             }
         }
         
@@ -148,13 +150,13 @@ public final class Constants {
             public static final class motor {
                 public static final int canID = 21;
                 public static final double kP = .05; // 0.059
-                public static final double kI = 0.0; // 0.1
+                public static final double kI = 0.0; // 0.0
                 public static final double kD = 0.0; // 0.00015
-                public static final double kV = .01;
+                public static final double kV = .011; // .01
                 public static final boolean bInverted = true; // invert
-                public static final double velTolerance = .5; // window for determining when shooter is at speed
-                public static final double velDefaultRange = 30; //27; // RPS for shooting at the default range
-                public static final double velClearNote = 35; // just enough to get over the bot for denials
+                public static final double velTolerance = .2; // window for determining when shooter is at speed
+                public static final double velDefaultRange = 25; //25; 30; // RPS for shooting at the default range
+                public static final double velClearNote = 25; //22 35; just enough to get over the bot for denials
             }
 
         }

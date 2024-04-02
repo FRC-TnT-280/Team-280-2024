@@ -9,6 +9,7 @@ import java.util.Optional;
 import com.ctre.phoenix6.StatusCode;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveModule;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveRequest;
+import com.ctre.phoenix6.mechanisms.swerve.utility.PhoenixPIDController;
 
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
@@ -30,7 +31,8 @@ public class FieldCentricAutoAim implements SwerveRequest {
     private Optional<Alliance> alliance;
     private final Limelight limelight;
     private double xOffset;
-    private final double kP = 0.05;
+    // public PhoenixPIDController headingController = new PhoenixPIDController(2.2, 0, 0); //added to test pid
+    private final double kP = .028; // removed to test pid
 
     public FieldCentricAutoAim(Limelight limelight) {
         this.limelight = limelight;
@@ -56,9 +58,13 @@ public class FieldCentricAutoAim implements SwerveRequest {
             }
         }
 
+        // double rotationRate = headingController.calculate(parameters.currentPose.getRotation().getRadians(), //added to test pid
+        // Math.toRadians(xOffset), parameters.timestamp); //added to test pid
         double toApplyX = VelocityX;
         double toApplyY = VelocityY;
-        double toApplyOmega = xOffset * kP * TunerConstants.MaxAngularRate;
+
+        // double toApplyOmega = rotationRate; //added to test pid
+        double toApplyOmega = xOffset * kP * TunerConstants.MaxAngularRate;  // removed to test pid
 
         if (Math.sqrt(toApplyX * toApplyX + toApplyY * toApplyY) < Deadband) {
             toApplyX = 0;

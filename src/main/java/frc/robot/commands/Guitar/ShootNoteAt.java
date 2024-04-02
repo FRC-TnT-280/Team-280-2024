@@ -8,6 +8,7 @@ import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants.guitar.shooterLower;
 import frc.robot.Constants.guitar.shooterUpper;
+import frc.robot.Constants.guitar;
 import frc.robot.Constants.guitar.intake;
 import frc.robot.subsystems.SubCandle;
 import frc.robot.subsystems.SubGuitar;
@@ -20,6 +21,7 @@ public class ShootNoteAt extends Command {
   public SubSwitchPanel s_SwitchPanel;
   public double dUpperSpd;
   public double dLowerSpd;
+  private int iCount = 0;
 
   /** Creates a new ShootNoteAt. */
   public ShootNoteAt(SubGuitar s_Guitar, SubCandle s_Candle, SubSwitchPanel s_SwitchPanel, double dUpperSpd, double dLowerSpd) {
@@ -44,8 +46,14 @@ public class ShootNoteAt extends Command {
     if (MathUtil.isNear(dLowerSpd, s_Guitar.getShooterLowerSpeed(), shooterLower.motor.velTolerance) 
     && MathUtil.isNear(dUpperSpd, s_Guitar.getShooterUpperSpeed(), shooterUpper.motor.velTolerance)
     /* && MathUtil.isNear(s_Guitar.getGuitarPivotPosition(), Constants.guitar.pivot.posMid, 0.001) */) {
-      s_Guitar.runIntakeAtSpeed(intake.motor.dutyCycleShoot);
+      iCount++;
     }
+
+    if (iCount >= guitar.SHOOTER_AT_SPEED_DEBOUNCE) {
+      s_Guitar.runIntakeAtSpeed(intake.motor.dutyCycleShoot);
+      iCount = 0;
+    }
+
   }
 
   // Called once the command ends or is interrupted.

@@ -7,12 +7,13 @@ package frc.robot.subsystems;
 import edu.wpi.first.math.util.Units;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Limelight extends SubsystemBase {
 
   private final NetworkTable table;
-  private final double MOUNTING_ANGLE_DEGREES = 45;
+  private final double MOUNTING_ANGLE_DEGREES = 25;
   private final double MOUNTING_HEIGHT_METERS = Units.inchesToMeters(27);
   private long fID;
   private double tx, ty, tv, ta, ts = -1;
@@ -112,7 +113,7 @@ public class Limelight extends SubsystemBase {
   public void setPipeline(int value) {
     if (value > 9 || value < 0)
       value = 0;
-    table.getEntry("at4").setNumber(value);
+    table.getEntry("pipeline").setNumber(value);
   }
 
   public boolean isTargetSeen() {
@@ -138,5 +139,12 @@ public class Limelight extends SubsystemBase {
     botPoseWpiBlue = table.getEntry("botpose_wpiblue").getDoubleArray(new Double[] {});
     botPoseWpiRed = table.getEntry("botpose_wpired").getDoubleArray(new Double[] {});
     fID = table.getEntry("tid").getInteger(-1);
+
+    SmartDashboard.putNumber("tx - x offset", tx);
+    SmartDashboard.putNumber("ty - y offset", ty);
+    SmartDashboard.putNumber("tv - target seen", tv);
+    SmartDashboard.putNumber("ts - skew", ts);
+    SmartDashboard.putNumber("ta - area", ta);
+    SmartDashboard.putNumber("fID - target number", fID);
   }
 }

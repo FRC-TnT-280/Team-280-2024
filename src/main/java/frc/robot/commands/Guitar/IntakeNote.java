@@ -16,7 +16,7 @@ public class IntakeNote extends Command {
   private SubGuitar s_Guitar;
   private SubCandle s_Candle;
   private SubSwitchPanel s_SwitchPanel;
-  int iCount = 0;
+  private int iCount = 0;
 
   public IntakeNote(SubGuitar s_Guitar, SubCandle s_Candle, SubSwitchPanel s_SwitchPanel) {
     addRequirements(s_Guitar);
